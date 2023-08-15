@@ -1,0 +1,13 @@
+footer {
+    height: 130px;
+    padding: 15px;
+    background-color: var(--nav-footer-color);
+}
+
+.site-logo {
+    font-size: 1.2em;
+}
+
+.nav-link {
+    color: var(--primary-color);
+}
