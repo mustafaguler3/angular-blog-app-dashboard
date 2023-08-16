@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+            <div class="card p-5 shadow-effect bg-secondary-theme">
+                <div class="card-body">
+
+                    <div class="text-center">
+                        <h3 class="text-theme-primary"> Login </h3>
+                        <p>Please login to your admin account to post a new blog post</p>
+                    </div>
+
+                    <form #login = ngForm>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" name="email" ngModel>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password" ngModel>
+                        </div>
+
+                        <button class="btn btn-info btn-block btn-theme">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -69,7 +69,7 @@
                 <label for="">Please Select a post category</label>
                 <select class="form-control" formControlName="category">
                     <option value="" disabled>Please select a category</option>
-                    <option *ngFor="let category of categories">{{category.data.category}}</option>
+                    <option *ngFor="let category of categories" value="{{category.id}}-{{category.data.category}}">{{category.data.category}}</option>
                 </select>
             </div>
 
