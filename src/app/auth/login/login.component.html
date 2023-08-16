@@ -12,16 +12,43 @@
                         <p>Please login to your admin account to post a new blog post</p>
                     </div>
 
-                    <form #login = ngForm>
+                    <form #login = ngForm (ngSubmit)="onSubmit(login.value)">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" name="email" ngModel>
+                            <input 
+                            type="email" 
+                            class="form-control" 
+                            placeholder="Email" 
+                            name="email" 
+                            #Email = 'ngModel'
+                            ngModel
+                            email
+                            required
+                            [ngClass]="{'is-invalid': Email.touched && Email.invalid}">
+
+                            <div class="alert alert-danger" *ngIf="Email.touched && Email.invalid">
+                                Email can not be Empty
+                                <!--<div *ngIf="Email.errors?.required">Email cannot be Empty</div>
+                                <div *ngIf="Email.errors?.email">Please Enter a Valid Email Address</div>-->
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" name="password" ngModel>
+                            <input 
+                            type="password" 
+                            class="form-control" 
+                            placeholder="Password" 
+                            #Password= 'ngModel'
+                            name="password" 
+                            ngModel
+                            required
+                            [ngClass]="{'is-invalid': Password.touched && Password.invalid}">
+
+                            <div class="alert alert-danger" *ngIf="Password.touched && Password.invalid">
+                                Password cannot be empty
+                            </div>
                         </div>
 
-                        <button class="btn btn-info btn-block btn-theme">Login</button>
+                        <button class="btn btn-info btn-block btn-theme" [disabled]="login.invalid">Login</button>
                     </form>
                 </div>
             </div>
